@@ -24,27 +24,19 @@ public class IntToRomanGuts {
 	}
 
 	
-	
+	/**This method takes an int value and converts it to a Roman Numeral String using the above Map
+	 * 
+	 * @param num takes a number from user
+	 * @return returns int converted to String roman
+	 */
 	public static String convertToRoman(int num) {
-		//Floorkey Returns closest (lower) associated Key in map
 		String roman="";
 		do {
-			String s;
-			int l = map.floorKey(num);
-			//System.out.println("joining: "+roman +map.get(l));
-			roman = roman+map.get(l);
-			//System.out.println("IN LOOP: Roman: "+roman);
-			//System.out.println(map.get(l));
-			num = num-l;
-			//System.out.println("Num Mod:"+num);
-			
-			System.out.println("Num = "+num);
-			System.out.println(l);
-			
-			
+			int digit = map.floorKey(num);
+			roman = roman+map.get(digit);
+			num = num-digit;			
 		}while(num>0);
-		System.out.println("Roman:" +roman);
-		
+		System.out.println("Roman:" +roman);		
 		return roman;
 	}
 	

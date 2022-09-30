@@ -11,6 +11,13 @@ import intToRoman.IntToRomanGuts;
 @Controller 
 public class webController {
 	
+	@GetMapping("/")
+	public String home( ) {
+		
+		return "home";
+		
+	}
+	
 	
 	@GetMapping("/toRoman")
 	public String toRoman(@RequestParam(value ="num") int num, Model model) {
@@ -23,6 +30,8 @@ public class webController {
 		return "index";
 		
 	}
+	
+	
 	
 
 }
